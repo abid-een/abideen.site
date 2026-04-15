@@ -1,0 +1,47 @@
+{
+  "project": {
+    "name": "Billkar ERP",
+    "type": "enterprise-accounting-platform",
+    "team_size": "small-team",
+    "development_stage": "mvp-complete"
+  },
+  "workflow": {
+    "auto_approve_commits": false,
+    "require_code_review": true,
+    "testing_required": true,
+    "documentation_required": true,
+    "deployment_strategy": "incremental"
+  },
+  "quality": {
+    "code_coverage_threshold": 80,
+    "eslint_rules": "strict",
+    "typescript_strict": true,
+    "automated_tests": "required"
+  },
+  "architecture": {
+    "backend_framework": "express",
+    "frontend_framework": "react",
+    "database": "mysql",
+    "cache": "redis",
+    "queue": "bullmq"
+  },
+  "deployment": {
+    "containerization": "docker",
+    "ci_cd": "github-actions",
+    "monitoring": "grafana-prometheus",
+    "environment": "multi-env"
+  },
+  "features": {
+    "accounting": true,
+    "inventory": true,
+    "gst_compliance": true,
+    "multi_tenant": true,
+    "reporting": true
+  },
+  "preferences": {
+    "model_profile": "balanced",
+    "parallel_execution": true,
+    "auto_planning": false,
+    "verbose_logging": false
+  }
+}

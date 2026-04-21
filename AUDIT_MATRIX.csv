@@ -1,0 +1,56 @@
+id,area,status,owner,risk,proof,test
+1,backend,fixed,platform,high,Removed global BigInt prototype patch from app.js,serializer middleware serialization tests
+2,backend,fixed,platform,high,Config-driven trust proxy in env/app,proxy spoof integration test
+3,backend,planned,platform,medium,Boundary audit script + phased migration,CI boundary gate
+4,backend,planned,platform,medium,Subpath migration tracked,import resolution smoke test
+5,backend,planned,platform,medium,Boundary/import normalization tracked,static import lint gate
+6,backend,fixed,platform,high,Bounded auth worker queue + timeout in utils/password,auth flood concurrency test
+7,backend,planned,finance,high,Isolation level hardening backlog,ledger race test
+8,backend,fixed,platform,high,DB connection exponential retry in db/connection + server boot,container startup retry test
+9,backend,planned,finance,high,Composite uniqueness expansion tracked,duplicate insert race test
+10,backend,planned,reports,medium,Analytics query optimization backlog,query count regression test
+11,backend,planned,platform,high,Pagination cap gate script introduced,list endpoint cap test
+12,backend,planned,platform,medium,Idempotent migration standard tracked,migration rerun smoke test
+13,backend,planned,platform,medium,Soft-delete uniqueness policy tracked,recreate soft-deleted entity test
+14,backend,fixed,security,high,Refresh family ID + reuse revocation in auth controller,jwt reuse family revocation test
+15,backend,fixed,security,low,Auth whitelists moved to module constants,controller unit test
+16,backend,fixed,security,high,Recursive sanitizer with pollution key rejection,sanitizer fuzz test
+17,backend,verified,security,medium,Outbound webhook worker signs HMAC in webhook.worker,signature tamper dispatch test
+18,backend,verified,security,medium,API key secret hashed with bcrypt in apikey model,model hook hashing test
+19,backend,verified,security,high,No insecure DB fallback in config/database,startup env validation test
+20,backend,fixed,platform,medium,ENOENT handling constrained to fs-like signals,error classification test
+21,backend,verified,platform,medium,No synchronous backend PDF generator in located modules,pdf generation nonblocking smoke test
+22,backend,fixed,platform,high,Logger redact paths configured in utils/logger,pii redaction snapshot test
+23,backend,planned,platform,medium,Transport sync policy tracking,pino throughput benchmark
+24,backend,fixed,platform,medium,BusinessRuleError normalized to ERR_* codes,error contract API test
+25,backend,verified,platform,low,Outbox uses BullMQ worker not polling,outbox worker integration test
+26,backend,fixed,platform,high,Distributed Redis cron lock wrapper in cron worker,multi-instance cron execution test
+27,backend,fixed,platform,high,Atomic Redis lock idempotency middleware,idempotency race test
+28,frontend,verified,frontend,medium,Viewport-fit overflow hidden already enforced in index.css,viewport overflow e2e test
+29,frontend,fixed,frontend,medium,Central z-index scale introduced and wired,z-index layering test
+30,frontend,planned,frontend,medium,Layout state splitting tracked,rerender count regression test
+31,frontend,fixed,frontend,medium,VirtualizedSelectField introduced and integrated in StockReconciliationPage,npm run quality:gates + large list interaction test
+32,frontend,planned,frontend,medium,Tokenized styling compliance tracked,design token lint
+33,frontend,fixed,security,high,Hybrid cookie auth path + localStorage token de-emphasis,auth storage security test
+34,frontend,fixed,frontend,high,Redux persist versioned migration configured,rehydration migration test
+35,frontend,fixed,frontend,high,RTK retry disabled for non-idempotent methods,mutation retry behavior test
+36,frontend,planned,frontend,medium,Entity-level tag invalidation expansion tracked,cache invalidation test
+37,frontend,planned,frontend,medium,Polling-to-event transition tracked,realtime sync benchmark
+38,frontend,planned,frontend,medium,Route-level heavy import splitting tracked,bundle analyzer budget test
+39,frontend,planned,frontend,medium,Scroll/resize throttling rollout tracked,handler frequency test
+40,frontend,planned,frontend,medium,Image optimization policy tracked,CLS and lazy-load test
+41,frontend,verified,frontend,low,date-fns already present and used in key flows,bundle dependency audit
+42,frontend,verified,frontend,low,DelayedSuspense clears timeout in cleanup,hook cleanup unit test
+43,frontend,fixed,security,medium,window.unhandledrejection captured to Sentry,promise rejection capture test
+44,frontend,fixed,security,high,CSRF header + cookie flow wired in baseApi/backend guard,csrf mutation test
+45,frontend,planned,security,medium,Server-authoritative RBAC tightening tracked,route guard flicker test
+46,frontend,fixed,security,medium,Textarea maxLength and paste truncation guard,textarea payload test
+47,frontend,fixed,frontend,medium,useCrudSubmit catch narrowed from any,error mapping unit test
+48,frontend,verified,frontend,medium,No dynamic tailwind concat pattern detected,dynamic class scan test
+49,frontend,planned,frontend,low,ARIA-role based test migration tracked,test selector lint
+50,frontend,planned,frontend,medium,Suppressions cleanup campaign tracked,eslint suppression budget gate
+51,frontend,planned,frontend,medium,OpenAPI-based type generation tracked,schema-to-types check
+52,frontend,fixed,frontend,medium,Redux middleware adds Sentry breadcrumb/context,crash context propagation test
+53,frontend,planned,frontend,high,A11y parity rollout tracked,keyboard navigation and aria e2e tests
+54,frontend,planned,frontend,low,Form logic consolidation tracked,shared form hook coverage test
+55,frontend,planned,frontend,low,Prop drilling reduction tracked,context selector regression test

@@ -1,0 +1,48 @@
+name: Sync OpenAPI Types
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'openapi.yaml'
+      - '.github/workflows/sync-openapi-types.yml'
+
+jobs:
+  generate-types:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install openapi-typescript
+        run: npm install -g openapi-typescript
+
+      - name: Generate types from openapi.yaml
+        run: |
+          npx openapi-typescript openapi.yaml \
+            --output balnce-frontend/src/services/api/types/schema.d.ts
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet balnce-frontend/src/services/api/types/schema.d.ts || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push updated types
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add balnce-frontend/src/services/api/types/schema.d.ts
+          git commit -m "chore: auto-sync openapi types"
+          git push

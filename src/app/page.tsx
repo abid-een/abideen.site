@@ -11,11 +11,10 @@ function RecruiterHero() {
         Software Engineer Portfolio
       </p>
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-4xl leading-[1.05]">
-        I build reliable full-stack products that ship fast and scale cleanly.
+        I build high-performance fintech and compliance systems that scale.
       </h1>
       <p className="text-white/72 max-w-2xl text-base sm:text-lg leading-relaxed">
-        I am actively seeking software engineering roles where I can contribute
-        across frontend, backend, and product execution with measurable impact.
+        Full-Stack Developer with 1.5+ years of experience specializing in React, Node.js, and automated architectural solutions.
       </p>
       <div className="flex flex-wrap items-center gap-3">
         <Link href="/work" className="btn-primary">
@@ -80,9 +79,9 @@ function CapabilitySnapshot() {
 
 function ProofStrip() {
   const metrics = [
-    { label: "Years Building Products", value: "5+" },
-    { label: "Production Features Shipped", value: "40+" },
-    { label: "Cross-Functional Projects", value: "20+" },
+    { label: "Experience", value: "1.5+ Years" },
+    { label: "Code Accuracy Improvement", value: "35%" },
+    { label: "Documentation Efficiency", value: "80%" },
   ];
 
   return (

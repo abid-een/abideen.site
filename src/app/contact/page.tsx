@@ -26,10 +26,10 @@ export default function ContactPage() {
             Email
           </p>
           <Link
-            href="mailto:hello@abideen.site"
+            href="mailto:syedz4inbukhari@gmail.com"
             className="text-xl font-medium tracking-tight hover:underline"
           >
-            hello@abideen.site
+            syedz4inbukhari@gmail.com
           </Link>
         </article>
         <article className="surface-panel space-y-3">

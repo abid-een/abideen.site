@@ -34,43 +34,43 @@ export const navItems: NavItem[] = [
 
 export const workPreviews: WorkPreview[] = [
   {
-    title: "Real-Time Commerce Platform",
+    title: "Market Intelligence Dashboard",
     summary:
-      "Led migration from a monolith to a modular architecture with typed APIs.",
-    outcome: "Improved checkout success rate by 18% and reduced incident volume.",
+      "Designed a high-performance analytics interface to calculate and visualize complex financial Greeks from real-time data.",
+    outcome: "Optimized client-side execution to minimize data-stream latency for option chains.",
     href: "/work",
   },
   {
-    title: "Analytics Pipeline Stabilization",
+    title: "Retail Management OS",
     summary:
-      "Built resilient ingestion and validation workflows for reporting reliability.",
-    outcome: "Reduced data quality incidents by 63% within two quarters.",
+      "Transitioned manual retail operations to a relational system with attribute-based inventory tracking.",
+    outcome: "Increased reporting accuracy by 35% through robust data modeling and SQL design.",
     href: "/work",
   },
   {
-    title: "Design System Rollout",
+    title: "Automated Compliance Engine",
     summary:
-      "Created reusable UI primitives, docs, and release workflow for product teams.",
-    outcome: "Cut feature UI delivery time by 34% and improved consistency.",
+      "Engineered a WhatsApp-integrated billing solution utilizing linked-device protocols.",
+    outcome: "Reduced manual documentation time by 80% for retail floor staff.",
     href: "/work",
   },
 ];
 
 export const servicePillars: ServicePillar[] = [
   {
-    title: "Frontend Engineering",
+    title: "Full-Stack Development",
     description:
-      "Build responsive, accessible interfaces with scalable React and Next.js patterns.",
+      "Specializing in React, Node.js, and TypeScript to build scalable architectural solutions.",
   },
   {
-    title: "Backend & API Design",
+    title: "Fintech & Analytics",
     description:
-      "Design resilient services and data contracts that support reliable product delivery.",
+      "Architecting engines for NSE option chains, Greeks calculation, and real-time data processing.",
   },
   {
-    title: "Delivery & Collaboration",
+    title: "Automated Compliance",
     description:
-      "Drive execution across engineering, design, and product with clear ownership.",
+      "Developing GST-compliant SaaS and direct filing engines to streamline high-volume tax compliance.",
   },
 ];
 

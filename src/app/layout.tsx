@@ -8,9 +8,9 @@ const geistSans = GeistSans;
 const geistMono = GeistMono;
 
 export const metadata: Metadata = {
-  title: "abideen.site — Software Engineer Portfolio",
+  title: "Syed Zain Ul Abideen Bukhari — Software Engineer",
   description:
-    "Recruiter-focused software engineering portfolio with project outcomes, capabilities, and contact details.",
+    "Portfolio of Syed Zain Ul Abideen Bukhari, a Software Engineer specializing in Fintech and Automated Compliance systems.",
 };
 
 export default function RootLayout({

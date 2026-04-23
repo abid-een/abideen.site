@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-surface: rgba(255, 255, 255, 0.02);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  @apply bg-[var(--color-background)] text-[var(--color-foreground)] antialiased font-sans;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.shell-container {
+  @apply min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-foreground)];
+}
+
+.shell-inner {
+  @apply flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-20 space-y-14 sm:space-y-16 lg:space-y-20;
+}
+
+.surface-panel {
+  @apply border border-white/10 bg-[var(--color-surface)] p-5 sm:p-6;
+}
+
+.surface-card {
+  @apply transition-colors hover:bg-white/[0.04];
+}
+
+.btn-primary {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  @apply text-[11px] uppercase tracking-[0.16em] px-4 py-2 border border-white text-black bg-white hover:bg-transparent hover:text-white transition-colors;
+}
+
+.btn-secondary {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  @apply text-[11px] uppercase tracking-[0.16em] px-4 py-2 border border-white/20 text-white hover:border-white/40 hover:bg-white/[0.03] transition-colors;
+}

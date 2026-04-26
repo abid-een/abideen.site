@@ -1,0 +1,60 @@
+name: Production Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: './balnce-frontend/package-lock.json'
+
+      - name: Build Frontend
+        run: |
+          cd balnce-frontend
+          npm install --legacy-peer-deps
+          npm run build
+
+      - name: Deploy Frontend Assets (SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "balnce-frontend/dist/*"
+          target: "/var/www/billkar/frontend/dist"
+          strip_components: 2
+
+      - name: Deploy Backend Source (SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "balnce/*"
+          target: "/var/www/billkar/backend"
+          strip_components: 1
+          rm: false
+          exclude: "node_modules"
+
+      - name: Remote SSH Commands
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/billkar/backend
+            npm install --omit=dev
+            npm run db:migrate
+            pm2 reload billkar-api || pm2 start src/server.js --name billkar-api
